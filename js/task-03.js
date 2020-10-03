@@ -33,12 +33,14 @@ const images = [
 ];
 
 const ulRef = document.querySelector('ul#gallery');
-console.log('ulRef', ulRef);
 ulRef.classList.add('gallery');
 
-images.map(({ url, alt }) => {
-  ulRef.insertAdjacentHTML(
-    'beforeend',
-    `<li><img class="image" src="${url}" alt="${alt}" width="320"></li>`,
-  );
-});
+const listOfImages = images
+  .map(({ url, alt }) => {
+    const liRef = `<li><img class="image" src="${url}" alt="${alt}" width="320"></li>`;
+
+    return liRef;
+  })
+  .join('');
+
+ulRef.insertAdjacentHTML('beforeend', listOfImages);
