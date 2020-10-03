@@ -34,14 +34,11 @@ const images = [
 
 const ulRef = document.querySelector('ul#gallery');
 console.log('ulRef', ulRef);
+ulRef.classList.add('gallery');
 
 images.map(({ url, alt }) => {
   ulRef.insertAdjacentHTML(
     'beforeend',
-    `<li><img src="${url}" alt="${alt}" width="320"></li>`,
+    `<li><img class="image" src="${url}" alt="${alt}" width="320"></li>`,
   );
 });
-
-ulRef.style.display = 'flex';
-ulRef.style.listStyle = 'none';
-ulRef.style.justifyContent = 'space-between';
