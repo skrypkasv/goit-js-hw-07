@@ -9,3 +9,23 @@
 
 // ▶ Добавь слушатели кликов на кнопки, вызовы функций
 // и обновление интерфейса
+
+const spanRef = document.querySelector('#value');
+
+let counterValue = 0;
+
+const btnDecrRef = document.querySelector('[data-action="decrement"]');
+const btnIncrRef = document.querySelector('[data-action="increment"]');
+
+btnDecrRef.addEventListener('click', decrement);
+btnIncrRef.addEventListener('click', increment);
+
+function decrement() {
+  counterValue -= 1;
+  spanRef.textContent = counterValue;
+}
+
+function increment() {
+  counterValue += 1;
+  spanRef.textContent = counterValue;
+}
