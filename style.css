@@ -18,3 +18,15 @@ html {
 .image {
   box-shadow: 6px 7px 5px 1px rgba(0, 0, 0, 0.36);
 }
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
