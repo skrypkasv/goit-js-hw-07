@@ -18,8 +18,10 @@ const ingredients = [
 
 const ulRef = document.querySelector('ul#ingredients');
 
-ingredients.map(item => {
+const listOfIngredients = ingredients.map(item => {
   const liRef = document.createElement('li');
   liRef.textContent = item;
-  ulRef.append(liRef);
+  return liRef;
 });
+
+ulRef.append(...listOfIngredients);
