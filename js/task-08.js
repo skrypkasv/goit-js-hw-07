@@ -26,26 +26,32 @@ const btnRender = document.querySelector('button[data-action="render"]');
 const btnDestroy = document.querySelector('button[data-action="destroy"]');
 const divBoxesRef = document.querySelector('div#boxes');
 
-btnRender.addEventListener('click', onClickRender);
-btnDestroy.addEventListener('click', onClickDestroy);
+let initialSize = 30;
 
-console.log(divBoxesRef.style);
+btnRender.addEventListener('click', createBoxes);
+btnDestroy.addEventListener('click', destroyBoxes);
 
 function getRandomInt(max) {
   return Math.floor(Math.random() * Math.floor(max));
 }
 
-function onClickRender() {
-  const red = getRandomInt(255);
-  const green = getRandomInt(255);
-  const blue = getRandomInt(255);
-
-  const div = document.createElement('div');
-  div.classList.add('box');
-  div.style = `background-color: rgb(${red}, ${green}, ${blue}); width: 30; height: 30`;
-  divBoxesRef.appendChild(div);
+function createBoxes() {
+  const collection = [];
+  for (let i = 0; i < input.value; i += 1) {
+    const red = getRandomInt(255);
+    const green = getRandomInt(255);
+    const blue = getRandomInt(255);
+    initialSize += 10;
+    const div = document.createElement('div');
+    div.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+    div.style.width = `${initialSize}px`;
+    div.style.height = `${initialSize}px`;
+    collection.push(div);
+  }
+  divBoxesRef.append(...collection);
 }
 
-function onClickDestroy() {
+function destroyBoxes() {
   divBoxesRef.innerHTML = '';
+  initialSize = 30;
 }

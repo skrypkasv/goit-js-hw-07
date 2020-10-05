@@ -33,9 +33,6 @@ html {
 
 div#boxes {
   display: flex;
-}
-
-div.box {
-  width: 30px;
-  height: 30px;
+  flex-wrap: wrap;
+  align-items: center;
 }
