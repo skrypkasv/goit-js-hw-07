@@ -30,3 +30,12 @@ html {
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+div#boxes {
+  display: flex;
+}
+
+div.box {
+  width: 30px;
+  height: 30px;
+}
